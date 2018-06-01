@@ -1,0 +1,31 @@
+<!--pages/lottery/history/lottery_history.wxml-->
+<view scroll-y class="container">
+  <block wx:if="{{status=='success'}}">
+    <block wx:if="{{lotteries.length==0}}">
+      <text>{{noDataDesc}}</text>
+    </block>
+    <block wx:if="{{lotteries.length>0}}">
+      <view class='history_title bottom_line_long'>
+        <text class='history_row_item_2'>开奖期号</text>
+        <text class='history_row_item_2 text_align_right'>红色球</text>
+        <text class='history_row_item_1 text_align_right'>蓝色球</text>
+      </view>
+      <block wx:for="{{lotteries}}" wx:key="item">
+        <view id="{{item.code}}" class="history_item">
+          <text class='history_row_item_2'>{{item.expect}}</text>
+          <text class='history_row_item_2 text_align_right'>{{item.redBallsStr}}</text>
+          <text class='history_row_item_1 text_align_right'>{{item.blueBall}}</text>
+        </view>
+        <block wx:if="{{index==lotteries.length-1}}">
+          <view class='bottom_line_long'></view>
+        </block>
+        <block wx:if="{{index<lotteries.length-1}}">
+          <view class='bottom_line_short'></view>
+        </block>
+      </block>
+    </block>
+  </block>
+  <block wx:if="{{status=='failure'}}">
+    <text>{{errorMsg}}</text>
+  </block>
+</view>

@@ -1,0 +1,4 @@
+<!--pages/my/my.wxml-->
+<view class='container'>
+  <text class='text_align_center'>敬请期待</text>
+</view>

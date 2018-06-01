@@ -1,0 +1,31 @@
+/* pages/home/home.wxss */
+
+.home_location {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+
+.home_item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 16px;
+}
+
+.home_name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.home_desc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+  margin-top: 1px;
+}

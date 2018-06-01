@@ -1,0 +1,28 @@
+<!--pages/home/home.wxml-->
+<view class="container">
+  <view class="home_location bottom_line_long">
+    <text>当前位于：{{ad_info.city}}</text>
+  </view>
+  <block wx:if="{{status=='success'}}">
+    <block wx:if="{{lotteries.length==0}}">
+      <text>{{noDataDesc}}</text>
+    </block>
+    <block wx:if="{{lotteries.length>0}}">
+      <block wx:for="{{lotteries}}" wx:key="item">
+        <view id="{{item.code}}" class="home_item" bindtap="lotteryHistory">
+          <text class='home_name'>{{item.descr}}</text>
+          <text class='home_desc'>{{item.notes}}</text>
+        </view>
+        <block wx:if="{{index==lotteries.length-1}}">
+          <view class="bottom_line_long"></view>
+        </block>
+        <block wx:if="{{index<lotteries.length-1}}">
+          <view class="bottom_line_short"></view>
+        </block>
+      </block>
+    </block>
+  </block>
+  <block wx:if="{{status=='failure'}}">
+    <text>{{errorMsg}}</text>
+  </block>
+</view>
